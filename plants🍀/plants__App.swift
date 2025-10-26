@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct plants__App: App {
+    @StateObject private var store = PlantStore()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationStack {
+                start()
+            }
+            .environmentObject(store)
         }
     }
 }
